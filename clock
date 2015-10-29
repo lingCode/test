@@ -95,35 +95,35 @@
 		},1000);
 
 		//画针函数
-					function drawPointer (raduis,angle,width,color){
-						cobj.strokeStyle = color;
-						cobj.lineWidth = width;
+		function drawPointer (raduis,angle,width,color){
+			cobj.strokeStyle = color;
+			cobj.lineWidth = width;
 
-						cobj.beginPath();
-						cobj.moveTo(originx,originy);
-						cobj.lineTo(originx+raduis*Math.cos(angle*Math.PI/180),originy+raduis*Math.sin(angle*Math.PI/180));
-						cobj.stroke();
-					}
+			cobj.beginPath();
+			cobj.moveTo(originx,originy);
+			cobj.lineTo(originx+raduis*Math.cos(angle*Math.PI/180),originy+raduis*Math.sin(angle*Math.PI/180));
+			cobj.stroke();
+		}
 
-					//画刻度函数
-					function drakMark(){
-						for(var i=0; i<60; i++){
-							var angle = i*6*Math.PI/180;
-							var raduis1 = raduis - 4;
-							var lw = 2;
-							if(i%5 == 0){
-								raduis1 = raduis - 8;
-								lw = 4;
-							}
+		//画刻度函数
+		function drakMark(){
+			for(var i=0; i<60; i++){
+				var angle = i*6*Math.PI/180;
+				var raduis1 = raduis - 4;
+				var lw = 2;
+				if(i%5 == 0){
+					raduis1 = raduis - 8;
+					lw = 4;
+				}
 
-							cobj.strokeStyle = '#888';
-							cobj.lineWidth = lw;
-							cobj.beginPath();
-							cobj.moveTo(originx+raduis*Math.cos(angle),originy+raduis*Math.sin(angle));
-							cobj.lineTo(originx+(raduis1)*Math.cos(angle),originy+(raduis1)*Math.sin(angle));
-							cobj.stroke();
-						}
-					}
+				cobj.strokeStyle = '#888';
+				cobj.lineWidth = lw;
+				cobj.beginPath();
+				cobj.moveTo(originx+raduis*Math.cos(angle),originy+raduis*Math.sin(angle));
+				cobj.lineTo(originx+(raduis1)*Math.cos(angle),originy+(raduis1)*Math.sin(angle));
+				cobj.stroke();
+			}
+		}
 
 
 
